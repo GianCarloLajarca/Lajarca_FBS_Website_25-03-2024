@@ -1,31 +1,3 @@
-// document.addEventListener("DOMContentLoaded", function () {
-//   const dropdownToggle = document.querySelector("a[href='#dropdown']");
-//   const dropdownMenu = document.querySelector(".nav-links-dropdown");
-
-//   dropdownToggle.addEventListener("mouseenter", function () {
-//     dropdownMenu.style.display = "block";
-
-//     dropdownToggle.classList.add("active");
-//   });
-
-//   dropdownToggle.addEventListener("mouseleave", function () {
-//     dropdownMenu.style.display = "none";
-
-//     dropdownToggle.classList.remove("active");
-//   });
-
-//   dropdownMenu.addEventListener("mouseenter", function () {
-//     dropdownMenu.style.display = "block";
-
-//     dropdownToggle.classList.add("active");
-//   });
-
-//   dropdownMenu.addEventListener("mouseleave", function () {
-//     dropdownMenu.style.display = "none";
-//     dropdownToggle.classList.remove("active");
-//   });
-// });
-
 const burgerbtn = document.querySelector(".burgir-menu");
 const headerA = document.querySelector("nav");
 burgerbtn.addEventListener("click", () => {
@@ -33,11 +5,15 @@ burgerbtn.addEventListener("click", () => {
   headerA.classList.toggle("open");
 });
 
-// const links = document.querySelectorAll(".links__item h4");
-// links.forEach((link) => {
-//   link.addEventListener("click", () => {
-//     link.querySelector("i").classList.toggle("open");
-//     link.nextElementSibling.classList.toggle("open");
-//   });
-// });
+window.addEventListener('scroll', function() {
+  var header = document.querySelector('.back-top');
 
+  if (window.scrollY > 0) {
+      header.classList.remove(".back-top");
+      header.classList.add("sticky");
+  } else {
+      header.classList.add(".back-top");
+      header.classList.remove("sticky");
+      
+  }
+});

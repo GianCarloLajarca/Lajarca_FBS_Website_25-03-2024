@@ -33,7 +33,7 @@
                 <a href="#" class="submenu-name">About</a>
               </li>
               <li class="submenu-item">
-                <a href="#">Services</a>
+                <a href="#" class="submenu-name">Services</a>
                   <ul class="dropdown-menu depth_0">
                     <li class="dropdown-item">
                         <a href="#">Web Solutions</a>
@@ -79,10 +79,10 @@
       <div class="banner__wrapper">
         <div class="banner__top">
           <div class="banner__content">
-            <h2 class="banner-title mb-20">
+            <h2 class="banner-title mb-[20px]">
               <span class="font-extrabold">About</span> Us
             </h2>
-            <p class="mb-20"> 
+            <p class="mb-[20px]"> 
               As a social enterprise company, we are "in business for good." 
               Our commitment is to leverage business success for the good of people and the communities in 
               which we exist. Our vision and mission is successful business that maintains harmony between 
@@ -268,7 +268,7 @@
     <div class="container">
       <h2 class="banner-title text-center mb-[60px]">
         Some of our
-        <span class="font-bold">Clients and Partners</span>
+        <span class="font-extrabold">Clients and Partners</span>
       </h2>
       <div class="clients__partners__wrapper">
         <ul class="list-none text-center client__logo">
@@ -296,62 +296,51 @@
     </div>
   </section>
 
-    <footer class="footer">
-        <div class="container">
-          <div class="footer__wrapper">
-              <div class="footer__socials">
-                  <div class="footer__socials__content">
-                      <img src="/dist/img/logo-fbs-wht.png" alt="">
-                      <p class="text-center">Copyright © 2024</p>
-                      <ul class="footer__social__icons text-center">
-                        <li><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-square-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-square-youtube"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-yelp"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                      </ul>
-                  </div>
-              </div>
-              <div class="footer__services">
-                <div class="footer__services__content">
-                  <a href="#"><h4>SERVICES WE OFFER</h4></a>
-                  <div class="footer__services__offered">
-                    <ul id="menu-footer" class="menu__footer">
-                      <li><a href="#">Web Solutions</a></li>
-                      <li><a href="#">Virtual Assistant Solutions</a></li>
-                      <li><a href="#">Accounting Solutions</a></li>
-                      <li><a href="#">Learning Center Solutions</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div class="footer__contact">
-                <div class="footer__contact__content">
-                  <h4>CONTACT DETAILS</h4>
-                  <ul class="contact__details">
-                      <li><i class="fa-solid fa-phone"></i><span>049 501 3592</span></li>
-                      <li><i class="fa-solid fa-mobile-screen-button"></i><span>0927 168 6810</span></li>
-                      <li><i class="fa-solid fa-clock"></i><span>Monday - Friday | 7:00am - 4:30pm</span></li>
-                      <li><i class="fa-solid fa-envelope"></i><span>info@frontlinebusiness.com.ph</span></li>
-                      <li><i class="fa-solid fa-house-chimney"></i><span>Baloc road, Brgy. San Ignacio, San Pablo City, Laguna, 4000</span></li>
-                  </ul>
-
-                </div>
-              </div>
-          </div>
-        </div>
-    </footer>
-
-    <div class="back-top">
-      <a href="#top">
-        <i class="fa-solid fa-caret-up"></i>
-      </a>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__wrapper">
+      <div class="footer__socials">
+        <img src="./img/logo-fbs-wht.png" alt="" class="w-[200px]">
+        <p>Copyright © 2024</p>
+        <ul>
+          <li><a href="#"><i class="fa-brands text-2xl fa-square-facebook"></i></a></li>
+          <li><a href="#"><i class="fa-brands text-2xl fa-square-twitter"></i></a></li>
+          <li><a href="#"><i class="fa-brands text-2xl fa-square-youtube"></i></a></li>
+          <li><a href="#"><i class="fa-brands text-2xl fa-yelp"></i></a></li>
+          <li><a href="#"><i class="fa-brands text-2xl fa-linkedin"></i></a></li>
+        </ul>
+      </div>
+      <div class="footer__services">
+        <h2>SERVICES WE OFFER</h2>
+        <ul>
+          <li><a href="#">Web Solutions</a></li>
+          <li><a href="#">Virtual Assistant Solutions</a></li>
+          <li><a href="#">Accounting Solutions</a></li>
+          <li><a href="#">Learning Center Solutions</a></li>
+        </ul>
+      </div>
+      <div class="footer__contact">
+        <h2>CONTACT DETAILS</h2>
+        <ul>
+          <li><i class="fa-solid fa-phone"></i><a href="#">049 501 3592</a></li>
+          <li><i class="fa-solid fa-mobile"></i><a href="#">0927 168 6810</a></li>
+          <li><i class="fa-solid fa-clock"></i><a href="#">Monday - Friday | 7:00am - 4:30pm</a></li>
+          <li><i class="fa-solid fa-envelope"></i><a href="#">info@frontlinebusiness.com.ph </a></li>
+          <li><i class="fa-solid fa-home"></i><a href="#">Baloc road, Brgy. San Ignacio, San Pablo City, Laguna, 4000 </a></li>
+        </ul>
+      </div>
+      </div>
     </div>
+  </footer>
+
+  <div class="back-top sticky" style="display:block;">
+    <a href="#top">
+      <i class="fa-solid fa-caret-up"></i>
+    </a>
+  </div>
 
     <script src="./js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js?ver=5.7"></script>
-    <!-- MESSENGER TEMPLATE VENDORnyaaa -->
 <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 <div class="elfsight-app-70c87f4d-f398-4c92-a57c-0ef958276684" data-elfsight-app-lazy></div>
 

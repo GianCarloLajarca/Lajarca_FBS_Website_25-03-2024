@@ -2,12 +2,16 @@ module.exports = {
   content: ["./dist/**/*.{html,js}"],
   theme: {
     extend: {
+      screens: {
+        'tablet': {'max': '991px'},
+      },
+
       fontFamily: {
         'montserrat': ['Montserrat', 'sans-serif'],
       },
       
       backgroundImage: {
-        hero: "url('/dist/img/hero-pattern.svg')",
+        hero: "url('/dist/img/bg3.svg')",
         services: "url(/dist/img/what-we-offer-bg-scaled.jpg)",
       },
 
@@ -29,6 +33,7 @@ module.exports = {
       },
       animation: {
         'gradient': 'Gradient 15s ease forwards',
+        'gradient-mobile': 'Gradient_Mobile 15s ease forwards',
         'fadeInUp': 'fadeInUp 1s ease-out',
         'slideDown': 'slideDown 0.5s linear',
         'fadeInLeft': 'fadeInLeft 1s ease-out',

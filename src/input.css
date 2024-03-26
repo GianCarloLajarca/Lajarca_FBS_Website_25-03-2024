@@ -7,8 +7,16 @@
 
   /* ---------------------------------HEADER------------------------------------------------- */
    header {
-      @apply bg-light text-clrMagentaPurple w-full box-border block
-      px-5 
+      @apply px-[20px]
+      bg-light text-clrAccent w-full box-border block
+   }
+
+   header .container {
+    @apply w-full md:w-[970px] lg:w-[1170px] md:p-0 lg:p-0
+   }
+
+   header .container::before {
+    @apply content-[""] table box-border
    }
 
    .header__logo {
@@ -17,9 +25,19 @@
 
    
    header nav {
-    @apply absolute w-full h-full bg-light top-[75px] left-[-100%] z-[1]
-    border-t border-solid border-gray-300 transition duration-300
-    float-right block md:static md:border-0 md:border-b-0 md:w-7/12 md:float-right;
+    @apply 
+    absolute w-full h-full bg-light top-[75px] left-[-100%] z-[1]
+    border-t border-solid border-gray-300 duration-300
+    float-right block 
+    
+    lg:static md:border-0 md:w-7/12 md:float-right transition-all 
+    md:border-b-0 lg:border-b-0 
+    
+    /* tablet */
+    tablet:absolute tablet:w-full tablet:h-full tablet:bg-light tablet:top-[75px] tablet:left-[-100%] 
+    tablet:z-[1]
+    tablet:border-t tablet:border-solid tablet:border-gray-300 tablet:duration-300 tablet:float-right
+    tablet:block tablet:border-0;
    }
 
    header .container {
@@ -27,54 +45,77 @@
    }
 
    header nav ul {
-    @apply block text-center m-0 p-0 md:flex md:flex-row
+    @apply block text-center m-0 p-0 md:flex md:flex-row lg:flex lg:flex-row
+    /* tablet */
+    tablet:block tablet:text-center tablet:m-0 tablet:p-0 tablet:bg-light
    }
 
    header nav ul li {
-    @apply list-none relative;
+    @apply list-none relative 
+    /* tablet */
+    tablet:list-none
+    tablet:relative
    }
 
 
    li.submenu-item::after {
-    @apply content-[""] clear-both block text-[0] h-0 hidden
+    @apply content-[""] clear-both block text-[0] h-0
+    tablet:content-[""] tablet:clear-both tablet:block tablet:text-[0] tablet:h-0
    }
 
+   /* HEADER NAV DESKTOP */
    header nav ul li a {
-    @apply border-b border-solid border-gray-300 h-[60px] leading-[60px] w-full text-sm uppercase
-    inline-block px-4 relative md:h-[75px]
-    /* HOVER IN MOBILE DONT DELETE */
-  /* sm:hover:bg-clrMagentaPurple sm:hover:text-light */
+    @apply border-b lg:border-b-0 border-solid border-gray-300 h-[60px] leading-[60px] w-full text-sm uppercase
+    inline-block px-4 relative md:h-[75px] transition-all
     md:leading-[75px] md:text-[0.87rem] md:uppercase  md:px-[16px] md:relative md:no-underline
-    lg:block md:hidden;
+    lg:block 
+    /* tablet */
+    tablet:inline-block 
+    tablet:border-b tablet:border-solid tablet:border-gray-300 tablet:h-[60px] tablet:leading-[60px] 
+    tablet:w-full tablet:text-sm tablet:uppercase tablet:px-4 tablet:relative;
    }
 
-   header nav.open ul li a {
-    @apply hover:bg-clrAccent hover:text-light;
+   /* hover on the content of inside the burger menu */
+   header nav.open ul li .submenu-name {
+    @apply  hover:bg-clrAccent hover:text-light
+    tablet:hover:bg-clrAccent
+    tablet:hover:text-light;
    }
+
+   header nav.open .dropdown-menu {
+    @apply bg-[#480f2d]
+    tablet:bg-[#480f2d];
+   }
+
 
    .submenu-name::after {
     @apply bg-transparent bottom-2.5 block h-[5px] left-1/2 absolute 
     transition-all duration-300 ease-in-out w-0 content-[""] md:content-[""] md:absolute md:transition-all 
-    md:duration-300 md:bg-clrMagentaPurple md:w-0 md:left-0 md:origin-center;
+    md:duration-300 md:bg-clrMagentaPurple md:w-full md:left-0 md:origin-center
+    md:ease-in-out scale-x-0
+    
+    /* tablet */
+    tablet:bg-light tablet:bottom-2.5 tablet:block tablet:h-[5px] tablet:left-1/2 tablet:absolute 
+    tablet:transition-all tablet:duration-300 tablet:ease-in-out tablet:w-0 
    }
 
    .submenu-name:hover:after {
-    @apply md:w-full
+    @apply md:scale-x-100 transition-all
    }
 
    /* DROPDOWN */
    header nav ul li ul {
     @apply relative left-0 p-0 bg-clrAccent text-center border-t-[3px] border-solid
-    border-[#6a103f] min-w-[273px] md:border-t-[3px] md:border-solid md:border-[#6a103f] 
+    border-[#6a103f] md:border-t-[3px] md:border-solid md:border-[#6a103f] 
      min-w-[273px] text-left md:absolute md:z-50 md:left-0 md:bg-light md:text-clrAccent 
-    /* TEMPORARY */
+     transition-all
+    /* VISIBLILITY */
     hidden md:hidden 
-   }
 
-   /* BACKUP NOT WORKING */
-   /* header nav ul li:nth-child(3) {
-    @apply md:relative
-   } */
+    /* tablet */
+    tablet:relative tablet:left-0 tablet:p-0 tablet:bg-clrAccent tablet:text-center tablet:border-t-[3px]
+    tablet:border-solid tablet:border-[#6a103f] tablet:min-w-[273px] tablet:transition-all
+   }
 
    /* FOR DROPDOWN OF WEBSITE */
    #banner {
@@ -87,51 +128,87 @@
 
    /* SUB MENU ITEM LI */
    header nav ul li ul li {
-    @apply py-[5px] w-full block hover:bg-clrMagentaPurple md:py-5 md:w-full md:block
-    md:hover:bg-light md:py-[5px] 
+    @apply py-[5px] w-full block hover:bg-clrAccent md:py-5 md:w-full md:block
+    md:hover:bg-light md:py-[5px] md:transition-all
+    /* tablet */
+    tablet:py-[5px]  tablet:w-full  tablet:block  tablet:hover:bg-clrAccent
    }
 
    header nav ul li ul li a {
     @apply border-none h-auto leading-[1.6] p-0 w-[90%] text-light 
-    md:h-auto md:leading-[1.6] md:p-0 md:text-clrAccent md:text-left md:ml-2;
+    md:h-auto md:leading-[1.6] md:p-0 md:text-clrAccent md:text-left md:ml-2
+    /* tablet */
+    /* tablet:border-none tablet:h-auto tablet:leading-[1.6] tablet:p-0 tablet:w-[90%] tablet:text-light  */
    }
+
+   /* .submenu-name::after {
+    @apply bg-transparent bottom-2.5 block h-[5px] left-1/2 absolute 
+    transition-all duration-300 ease-in-out w-0 content-[""] md:content-[""] md:absolute md:transition-all 
+    md:duration-300 md:bg-clrMagentaPurple md:w-full md:left-0 md:origin-center
+    md:ease-in-out md:scale-x-0;
+   }
+
+   .submenu-name:hover:after {
+    @apply md:scale-x-100
+   } */
 
    /* DROP DOWN MENU HOVER ON DESKTOP */
-   .dropdown-item::after {
-    @apply bg-transparent bottom-1 block h-[5px] left-1/2 absolute 
-    transition-all duration-300 ease-in-out w-0 content-[""] md:content-[""] md:absolute md:transition-all 
-    md:duration-300 md:bg-clrMagentaPurple md:w-0 md:left-0 md:origin-center md:h-[2px];
+
+   .dropdown-menu {
+    @apply md:border-t-[3px] md:border-clrAccent md:p-[10px] md:min-w-[273px]
+    md:text-left;
    }
 
-   .dropdown-item:hover:after {
-    @apply md:w-full
+   .dropdown-item{
+    @apply md:py-[5px] md:w-full md:block
+   }
+
+   .dropdown-item a {
+    @apply md:w-[90%] md:h-auto md:leading-[1.6] md:p-[0px] md:whitespace-nowrap
+    
+   }
+
+   .dropdown-item a::after {
+    @apply bg-transparent bottom-0 block h-[5px] left-1/2 absolute 
+    transition-all duration-300 ease-in-out w-0 content-[""] md:content-[""] md:absolute md:transition-all 
+    md:duration-300 md:bg-clrMagentaPurple md:w-full md:left-0 md:origin-center md:h-[2px]
+    md:ease-in-out md:scale-x-0
+    
+    tablet:bg-transparent tablet:bottom-0 tablet:block tablet:h-[5px] tablet:left-1/2 tablet:absolute
+    tablet:transition-all tablet:duration-300 tablet:ease-in-out tablet:w-0 tablet:content-[""];
+   }
+
+   .dropdown-item a:hover:after {
+    @apply md:scale-x-100 md:transition-all
+    tablet:scale-x-100 tablet:transition-all
    }
 
 
    /* HOVER SERVICES ON MOBILE */
    header nav ul li:nth-child(3):hover .dropdown-menu {
-    @apply block transition-all duration-[0.5s] md:block;
+    @apply block transition-all duration-[0.5s] md:block
+    tablet:block tablet:transition-all tablet:duration-[0.5s] tablet:block;
    }
 
    /* HOVER SERVICES ON DESKTOP */
    #menu-primary .submenu-item:nth-child(3):hover .dropdown-menu {
-    @apply md:block;
+    @apply md:block md:transition-all;
    }
 
 /* ---------------------------------BURGER MENU------------------------------------------------ */
 .burgir-menu {
   @apply block text-dark float-right h-[75px] leading-[90px]
-  cursor-pointer lg:hidden
+  cursor-pointer lg:hidden transition-all ease-in-out duration-500
 }
 
 .burgir-menu {
-  @apply w-10 h-10 relative mx-auto my-[18px] transition-transform duration-500 ease-in-out cursor-pointer
+  @apply w-10 h-10 relative mx-auto my-[18px] transition-all ease-in-out duration-500 cursor-pointer
   lg:hidden;
 }
 
 .burgir-menu span {
   @apply block absolute h-2 w-full bg-clrMagentaPurple rounded-[9px]
-  opacity-[1] left-0 rotate-0 transition duration-[250] ease-in-out;
+  opacity-[1] left-0 rotate-0 transition-all duration-[250] ease-in-out;
 }
 
 .burgir-menu span:nth-child(1) {
@@ -152,12 +229,14 @@
 
 
 /* ---------------------------------NAV------------------------------------------------ */
+
 nav.open {
   @apply w-full left-0 transition-all ease-in-out duration-500
+  tablet:w-full tablet:left-0 tablet:transition-all tablet:ease-in-out tablet:duration-500;
 }
 
 .burgir-menu.open span:nth-child(1) {
- @apply top-[18px] w-[0%] left-[50%];
+ @apply top-[18px] w-[0%] left-[50%] transition-all;
 }
 
 .burgir-menu.open span:nth-child(2) {
@@ -169,7 +248,7 @@ nav.open {
 }
 
 .burgir-menu.open span:nth-child(4) {
-  @apply top-[18px] w-[0%] left-[50%];
+  @apply top-[18px] w-[0%] left-[50%] transition-all;
  }
  
 
@@ -180,7 +259,16 @@ nav.open {
     background-position: 20% 50%;
   }
   100% {
-    background-position: 50% 80%;
+    background-position: 42% 80%;
+  }
+}
+
+@keyframes Gradient_Mobile {
+  0% {
+    background-position: 20% 50%;
+  }
+  100% {
+    background-position: 50% 77%;
   }
 }
 
@@ -197,17 +285,30 @@ nav.open {
 }
 
 #banner {
-  @apply bg-hero md:py-[5vh] bg-clrLightGray
-  bg-cover bg-center animate-gradient;
+  @apply bg-hero md:py-[10vh] bg-clrLightGray
+  bg-cover animate-gradient-mobile md:animate-gradient lg:animate-gradient duration-[15s];
 }
 
 .banner__about {
   @apply bg-hero md:py-[10vh] bg-clrLightGray
-  bg-cover bg-center animate-gradient;
+  bg-cover bg-center md:min-h-[auto] animate-gradient-mobile md:animate-gradient lg:animate-gradient duration-[15s];
 }
 
 .banner__about .container {
-  @apply md:pl-[250px] md:pr-[50px];
+  @apply w-full lg:mr-auto lg:ml-auto lg:pl-[15px] lg:pr-[15px] lg:w-[1170px]
+  md:w-[970px];
+}
+
+.banner__about .banner__wrapper {
+  @apply flex flex-wrap
+}
+
+.banner__about .banner__top {
+  @apply w-full md:w-[50%] lg:w-[50%]
+}
+
+.banner__about .banner__bottom {
+  @apply w-full md:w-[50%] lg:w-[50%];
 }
 
 
@@ -224,7 +325,7 @@ nav.open {
 }
 
 .banner__content {
-  @apply h-auto md:relative animate-fadeInUp; 
+  @apply h-auto md:relative md:m-auto animate-fadeInUp; 
 }
 
 #banner .banner__content {
@@ -236,7 +337,7 @@ nav.open {
 }
 
 .banner-title {
-  @apply text-3xl leading-[30px]; 
+  @apply text-[30px] leading-[30px]; 
 }
 
 #banner .banner__content p {
@@ -248,10 +349,14 @@ nav.open {
 }
 
 .banner__bottom {
-  @apply flex flex-col w-full relative min-h-[1px] px-[15px]
+  @apply flex flex-col w-full relative min-h-[1px] px-[15px] animate-fadeInUp
 }
 
 /* ---------------------------------WHO WE ARE------------------------------------------------ */
+.aboutUs .container{
+  @apply mr-auto ml-auto pl-[15px] pr-[15px] w-full md:w-[970px] lg:w-[1170px]
+}
+
 .whoWeAre {
   @apply relative
 }
@@ -263,6 +368,7 @@ nav.open {
 .whoWeAre .whoWeAre__content a {
    @apply cursor-pointer;
 }
+
 
 /* ---------------------------------YOUTUBE VIDEO------------------------------------------------ */
 
@@ -299,11 +405,12 @@ nav.open {
 
 /* ---------------------------------WHAT WE OFFER------------------------------------------------ */
 #services {
-  @apply bg-services bg-cover bg-center bg-no-repeat text-light
+  @apply bg-services bg-cover bg-center bg-no-repeat text-light md:py-[15vh]
+  md:text-light md:bg-cover md:bg-center md:bg-no-repeat 
 }
 
 #services .container {
-  @apply md:w-[1170px];
+  @apply md:w-[970px] lg:w-[1170px];
 }
 
 #menu-footer li {
@@ -325,11 +432,11 @@ nav.open {
 } */
 
 .offer {
-  @apply relative min-h-px px-[15px] mb-[60px] text-center
+  @apply relative min-h-px px-[15px] mb-[60px] text-center ;
 }
 
 .offer img {
-  @apply overflow-clip max-w-full border-0 mx-auto;
+  @apply h-[50px] overflow-clip max-w-full border-0 mx-auto animate-fadeInLeft;
 }
 
 .offer h2 {
@@ -337,7 +444,8 @@ nav.open {
 }
 
 .offer__icon{
-  @apply opacity-[1] transition-opacity duration-[400] delay-0 h-[50px];
+  @apply opacity-[1] transition-opacity duration-[400] delay-0 h-[50px]
+  md:mb-2;
 }
 
 .offer__details {
@@ -393,7 +501,7 @@ nav.open {
 }
 
 .client__pic img {
-  @apply max-w-full mx-auto
+  @apply max-w-full mx-auto opacity-[1] transition-opacity duration-[400ms] delay-0;
 }
 
 
@@ -459,25 +567,46 @@ nav.open {
   border-0 italic m-0 outline-none p-0 align-baseline;
 }
 
-.tns-nav {
+/* BACKUP TNS NAV */
+/* .tns-nav {
   @apply absolute left-[50%] translate-x-[-50%] z-[9999] bottom[20px];
+} */
+
+.testimonial__wrapper .tns-outer {
+  @apply relative;
 }
 
-.tns-outer {
-  @apply relative
+.testimonial__wrapper .tns-nav {
+  @apply z-[999] absolute bottom-[1rem]
+  left-[50%]
+  -translate-x-1/2
+  translate-y-[250%];
 }
 
-.tns-liveregion {
+.testimonial__wrapper .tns-liveregion {
   @apply hidden;
 }
 
-.tns-nav button {
+/* BACKUP TNS NAV */
+/* .tns-nav button {
   @apply w-[15px] h-[15px] bg-clrMagentaPurple rounded-[50%] 
   mx-[5px] leading-normal cursor-pointer inline-block border-none
   box-border z-[9999];
+} */
+
+.testimonial__wrapper .tns-nav button {
+  @apply mx-[5px]
+  w-[15px]
+  h-[15px]
+  rounded-[50%]
+  border-none
+  bg-clrAccent
+  leading-normal
+  inline-block border-none
+  box-border z-[9999] cursor-pointer ;
 }
 
-.button.tns-nav-active {
+.testimonial__wrapper button.tns-nav-active {
   @apply bg-clrLightMagenta;
 }
 
@@ -487,7 +616,7 @@ nav.open {
 }
 
 .events__activities .container {
-  @apply md:w-[970px]
+  @apply md:w-[970px] lg:w-[1170px];
 }
 
 .events__activities h2 {
@@ -521,7 +650,7 @@ nav.open {
 }
 
 .img__box img {
-  @apply w-full object-cover h-48 transition-all duration-[500] ease-in-out opacity-[1]
+  @apply w-full object-cover h-48 transition-all ease-in-out opacity-[1]
   border-0 max-w-full overflow-clip box-border transform hover:scale-125 duration-500 bg-clip-padding;
 }
 
@@ -538,126 +667,76 @@ nav.open {
 }
 
 /* ---------------------------------FOOTER------------------------------------------------ */
-footer {
-  @apply bg-[#6a103f] py-[5vh] text-[.7rem] text-[#ddd] block box-border
-  ;
-}
-footer .container {
-  @apply md:w-[1170px];
-}
-
-footer ul li {
-  @apply list-none;
+.footer {
+  @apply bg-clrAccent py-14; 
 }
 
 .footer__wrapper {
-  @apply ml-[-15px] mr-[-15px] md:relative md:grid md:grid-cols-3
+  @apply text-light lg:grid lg:grid-cols-3;
 }
 
-/* .footer__wrapper::before {
-  @apply content-[""] table box-border
-} */
-
+/* FOOTER SOCIALS */
 .footer__socials {
-  @apply w-full float-left relative min-h-[1px] py-[15px]
-  md:w-[33.33333333%] md:float-left; 
+  @apply py-5 flex flex-col items-center lg:px-2 lg:py-0 lg:border-r-[1px] border-light
+  animate-fadeInUp
 }
 
-.footer__socials__content {
-  @apply mb-[40px]
+.footer__socials p {
+  @apply text-xs mb-5;
 }
 
-.footer__socials__content img {
-  @apply w-[200px] block p-0 text-center float-none ml-auto mr-auto opacity-[1]
-  delay-0 transition-opacity duration-[400] border-0 max-w-full overflow-clip
-  md:w-[500px] md:ml-11;
+.footer__socials ul {
+  @apply flex gap-[2rem];
 }
 
-.footer__socials__content p {
-  @apply text-xs mb-[20px] md:ml-14 md:whitespace-nowrap;
-}
 
-.footer__socials__content li {
-  @apply inline-block px-2.5 text-center
-}
-
-.footer__socials__content li i {
-  @apply text-2xl
-}
-
-.footer__social__icons {
-  @apply md:flex text-center
-}
-
+/* FOOTER SERVICES */
 .footer__services {
-  @apply w-full float-left relative min-h-[1px] pl-[15px] pr-[15px] 
-  md:w-[33.33333333%] md:static md:pl-[0]
+  @apply py-5 flex flex-col items-center lg:px-2 lg:py-0 lg:border-r-[1px] border-light
+  animate-tagAnimation
 }
 
-.footer__services::before {
-  @apply md:content-[""] md:absolute md:top-0 md:bottom-0 
-  md:border-l-[1px] md:border-solid md:border-clrLightGray
+.footer__services ul {
+  @apply flex flex-col text-center gap-3;
 }
 
-.footer__services__content {
-  @apply mb-[40px] text-center md:pl-[15px] md:mb-0 md:text-center
-  md:ml-28;
+.footer__services h2 {
+  @apply text-center text-sm font-semibold mb-3;
 }
 
-.footer__services__content a h4 {
-  @apply mb-[20px] font-bold text-light text-[14px] clear-both
-  md:whitespace-nowrap
+.footer__services li {
+  @apply text-[10px];
 }
 
-.footer__services__offered li::after {
-  @apply content-[""] clear-both block text-[0] h-0 hidden;
+.footer__services li a:hover{
+  @apply opacity-70 transition-all;
 }
 
-.menu__footer li a {
-  @apply text-[0.87rem] hover:text-clrLightGray hover:bg-clrMagentaPurple
-}
 
+/* FOOTER CONTACT */
 .footer__contact {
-  @apply w-full float-left relative min-h-[1px] pl-[15px] pr-[15px] 
-  md:w-[33.33333333%]
+  @apply footer-box py-5 flex flex-col items-center lg:px-2 lg:py-0 lg:border-r-[1px] lg:!items-start lg:ml-4 border-light
+  animate-tagAnimation;
 }
 
-.footer__contact::before {
-  @apply md:content-[""] md:absolute md:top-0 md:bottom-0 
-  md:border-l-[1px] md:border-solid md:border-clrLightGray
+.footer__contact h2 {
+  @apply text-center text-sm mb-3 font-semibold lg:text-left;
 }
 
-.footer__contact__content {
-  @apply mb-[40px] text-center md:text-left md:pl-[15px] md:mb-0;
+.footer__contact ul {
+  @apply flex flex-col text-center lg:text-left gap-3
 }
 
-.footer__contact__content h4 {
-  @apply mb-[20px] font-bold text-light text-[14px] clear-both
-  md:whitespace-nowrap
+.footer__contact li {
+  @apply text-[10px];
 }
 
-.contact__details i {
-  @apply text-light w-4 h-4 box-border ;
+.footer__contact li i {
+  @apply text-[15px] mr-1;
 }
 
-.contact__details span {
-  @apply align-middle text-xs;
-}
-
-.contact__details li {
-  @apply md:flex md:whitespace-nowrap md:mb-3
-}
-
-footer ul li span {
-  @apply pl-[0.34rem] inline-block mt-[-0.4rem];
-}
-
-footer ul li::after {
-  @apply content-[""] clear-both block text-[0] h-0 hidden;
-}
-
-.footer__wrapper::after {
-  @apply clear-both content-[""] table box-border
+.footer-box:last-child {
+  @apply border-none;
 }
 
 /* ---------------------------------MISSION,VISION & VALUES------------------------------------------------ */
@@ -716,7 +795,7 @@ footer ul li::after {
 }
 
 .card__content span {
-  @apply md:text-xl
+  @apply text-[20px] md:text-xl 
 }
 
 /* ---------------------------------OUR TEAM------------------------------------------------ */
@@ -745,6 +824,10 @@ footer ul li::after {
   @apply content-[""] table box-border
 }
 
+.our__team__content {
+  @apply animate-tagAnimation
+}
+
 .our__team__content img {
   @apply md:hidden;
 }
@@ -766,6 +849,7 @@ footer ul li::after {
   md:min-h-[420px] md:max-w-[1070px]
 }
 
+/* HOVER ON TEAM */
 .team__position{
   @apply text-center hidden opacity-[1] translate-y-0 animate-tagAnimation;
 }
@@ -775,16 +859,16 @@ footer ul li::after {
 }
 
 .team__box img {
-  @apply block grayscale transition-all duration-[0.5s] ease-in-out
+  @apply block grayscale transition-all duration-[.5s] ease-in-out
   opacity-[1] border-0 max-w-[inherit]
 }
 
 .team__box img:hover{
-  @apply grayscale-0;
+  @apply grayscale-0 transition-all;
 }
 
 .team__box:hover .team__position {
-  @apply opacity-100 translate-y-0 block transition-all duration-75;
+  @apply opacity-100 translate-y-0 block transition-all duration-[.5s];
 }
 
 
@@ -800,11 +884,11 @@ footer ul li::after {
 }
 
 .team__jj img:hover {
-  @apply grayscale-0;
+  @apply grayscale-0 transition-all;
 }
 
 .team__jj:hover .team__position {
-  @apply opacity-100 translate-y-0 block;
+  @apply opacity-100 translate-y-0 block transition-all duration-[.5s];
 }
 
 /* TEAM JEFF */
@@ -926,8 +1010,9 @@ footer ul li::after {
 }
 
 /* ----------------------------------------Clients and Partners----------------------------------------- */
+
 .client__logo li {
-  @apply inline-block my-[40px] my-[45px] w-[270px] align-middle m-1;
+  @apply inline-block my-[40px] mx-[45px] w-[270px] align-middle;
 }
 
 .client__logo img {
@@ -935,20 +1020,35 @@ footer ul li::after {
 }
 
 .clients__partners .container {
-  @apply md:w-[1170px];
+  @apply w-full md:w-[970px] lg:w-[1170px];
+}
 
+.clients__partners__wrapper {
+  @apply animate-fadeInLeft
 }
 
 /* ----------------------------------------BACK TO TOP----------------------------------------- */
 .back-top {
-  @apply fixed bottom-[30px] right-[200px] z-[9999] text-center py-[5px]
+  @apply  bottom-[30px] right-[200px] text-center py-[5px]
   px-[15px] no-underline text-light 
-  bg-black bg-opacity-30 rounded-md block max-w-56 mx-auto 
-  transition-all ease-linear duration-100 hover:bg-opacity-50;
+  bg-black bg-opacity-30 rounded-[3px] 
+  /* TEMPORARY */
+  hidden
+
+  max-w-56 mx-auto 
+  transition-all ease-linear duration-100 hover:bg-opacity-50 border-[1px] border-solid border-light;
 }
 
 .back-top i {
-  @apply fill-light w-16 h-16 text-center text-5xl
+  @apply fill-light w-[3rem] h-[3rem] text-center text-5xl
+}
+
+.sticky {
+  @apply fixed transition duration-300 ease-in;
+}
+
+.back-top.sticky {
+  @apply fixed z-[999]
 }
 
 }
@@ -989,7 +1089,7 @@ footer ul li::after {
 
 @layer utilities {
   .btn--magenta {
-    @apply bg-clrMagentaPurple text-light inline-block
+    @apply bg-clrAccent text-light inline-block
     py-[13px] px-[25px]
     border-2 border-white rounded-full font-bold transition-all duration-500
     hover:bg-light hover:text-clrMagentaPurple 
@@ -1004,7 +1104,7 @@ footer ul li::after {
     @apply bg-transparent text-clrMagentaPurple inline-block
     py-[13px] px-[25px] border-[1px] border-solid border-clrMagentaPurple
     rounded-[30px] font-[700] transition-all duration-500 
-    hover:bg-clrLightGray hover:text-clrMagentaPurple
+    hover:bg-clrLightGray hover:text-clrMagentaPurple hover:border-clrLightGray
   }
 
   .bg-magenta {
@@ -1019,6 +1119,11 @@ footer ul li::after {
     border-[1px] border-solid border-light
     rounded-[30px] font-[700]
     transition-all duration-[0.5s]
+    hover:bg-light hover:text-clrAccent
+  }
+
+  .lazy {
+    @apply opacity-[1] transition-opacity duration-[400ms] delay-0
   }
   
 }
