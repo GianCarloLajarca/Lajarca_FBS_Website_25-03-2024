@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Sixtyfour&family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
   @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Sixtyfour&family=Ubuntu+Condensed&display=swap');
   </style>
@@ -34,7 +35,7 @@
               </li>
               <li class="submenu-item">
                 <a href="#" class="submenu-name">Services</a>
-                  <ul class="dropdown-menu depth_0">
+                  <ul class="dropdown-menu">
                     <li class="dropdown-item">
                         <a href="#">Web Solutions</a>
                     </li>
@@ -118,7 +119,7 @@
           <div class="youtube-modal" id="youtube-modal">
             <div class="youtube-modal-video">
               <iframe id="video" width="560" height="315" frameborder="0" allow="accelerometer;    autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" data-src="https://www.youtube.com/embed/LojeyGL8rHM?si=BmWV9ZbhOP9uoT93" class=" lazyloaded" src="https://www.youtube.com/embed/LojeyGL8rHM?si=BmWV9ZbhOP9uoT93"></iframe>
-                 <a class="closeModal" id="closeModal">+</a>
+                 <a class="closeModal" id="closeModal">X</a>
              </div>
           </div>
         </div>
@@ -128,7 +129,7 @@
     <section id="services" class="services">
       <div class="container">
         <h2 class="banner-title text-center mb-[60px]">
-          What <span class="font-bold">We Offer</span>?
+          What <span class="font-extrabold">We Offer</span>?
         </h2>
         <div class="offered__Services">
 
@@ -286,7 +287,7 @@
               <div class="client__testimonial">
                 <div class="client__testimonial__content">
                   <div class="client__testimonial__desc">
-                    <h2 class="text-2xl">“The team at Frontline is incredible. They genuinely care about our needs and share in our vision of success. 
+                    <h2 class="text-[20px] leading-[30px]">“The team at Frontline is incredible. They genuinely care about our needs and share in our vision of success. 
                       We are proud to call them a business partner and appreciate all the hard work they do for us.”</h2>
                     </div>
                 </div>
@@ -319,7 +320,7 @@
             <div class="client__testimonial">
               <div class="client__testimonial__content">
                 <div class="client__testimonial__desc">
-                  <h2 class="text-xl font-bold">
+                  <h2 class="text-[20px] leading-[30px] font-bold">
                     There is no better business model
                   </h2>
                 </div>
@@ -353,7 +354,7 @@
                         <div class="client__testimonial">
                           <div class="client__testimonial__content">
                             <div class="client__testimonial__desc">
-                              <h2 class="text-xl font-bold">
+                              <h2 class="text-[20px] leading-[30px] font-bold">
                                 I have worked with a number of different website developers, 
                                 ut none have been as responsive or as quick to turn the work around.
                               </h2>
@@ -386,7 +387,7 @@
                 <div class="client__testimonial">
                   <div class="client__testimonial__content">
                     <div class="client__testimonial__desc">
-                      <h2 class="text-xl font-bold">
+                      <h2 class="text-[20px] leading-[30px] font-[700]">
                         We enjoyed working together and meeting with the Frontline Business Solutions Staff when they built the website of Frontline Christian Academy.
                       </h2>
                     </div>
@@ -420,7 +421,7 @@
                   <div class="client__testimonial">
                     <div class="client__testimonial__content">
                       <div class="client__testimonial__desc">
-                        <h2 class="text-xl font-bold">
+                        <h2 class="text-[20px] leading-[30px] font-bold">
                           Yes, we are pleased to have chosen Frontline Business Solutions as our partner in developing the 
                           PHIX Genomics website because you are able to deliver on your promises.
                         </h2>
@@ -546,8 +547,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
 <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 <div class="elfsight-app-70c87f4d-f398-4c92-a57c-0ef958276684" data-elfsight-app-lazy></div>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      
+      AOS.init();
       var slider = tns({
         container: ".testimonials__slider",
         items: 1,

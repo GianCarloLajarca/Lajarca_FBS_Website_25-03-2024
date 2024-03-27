@@ -3,7 +3,8 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        'tablet': {'max': '991px'},
+        'tablet': {'max': '1166px'},
+        'burger-menu': {'min': '1169px'},
       },
 
       fontFamily: {
@@ -38,7 +39,7 @@ module.exports = {
         'slideDown': 'slideDown 0.5s linear',
         'fadeInLeft': 'fadeInLeft 1s ease-out',
         'fadeInRight': 'fadeInRight 1s ease-out',
-        'tagAnimation': 'tagAnimation 1s ease-out',
+        'tagAnimation': 'tagAnimation .3s ease-out',
       },
     },
   },
